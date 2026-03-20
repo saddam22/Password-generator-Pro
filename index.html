@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    darkMode: 'class'
+  }
+</script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen transition-colors">
+  <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl w-full max-w-md">
+    <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Password Generator</h1>
+
+ <!-- Password Display -->
+ <div class="flex items-center mb-4">
+   <input type="text" id="password" class="flex-1 p-3 rounded-l-xl border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white" placeholder="Generate Password" readonly />
+   <button id="copyBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-r-xl">Copy</button>
+ </div>
+
+ <!-- Options -->
+ <div class="mb-4 space-y-2">
+   <div>
+     <label class="text-gray-800 dark:text-gray-200">Length: <span id="lengthValue">12</span></label>
+     <input type="range" id="length" min="4" max="32" value="12" class="w-full">
+   </div>
+   <div class="flex flex-col gap-2">
+     <label class="text-gray-800 dark:text-gray-200"><input type="checkbox" id="upperCase" checked />Include UpperCase</label>
+      <label class="text-gray-800 dark:text-gray-200"><input type="checkbox" id="lowerCase" checked />Include LowerCase</label>
+      <label class="text-gray-800 dark:text-gray-200"><input type="checkbox" id="numbers" checked />Include Numbers</label>
+      <label class="text-gray-800 dark:text-gray-200"><input type="checkbox" id="symbols" checked />Include Symbols</label>
+   </div>
+ </div>
+
+<button id="generateBtn" class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-semibold">Generate Password</button>
+
+ <!-- Dark Mode Toggle -->
+    <div class="mt-4 text-center">
+      <button id="darkModeToggle" class="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-xl">Toggle Dark Mode</button>
+    </div>
+     </div>
+
+     <script src="script.js"></script>
+</body>
+</html>
